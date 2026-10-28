@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Library | Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="app-page">
+
+  <aside class="sidebar">
+    <a class="brand" href="home.html">✦ UNIVERSITY LIBRARY</a>
+    <p class="eyebrow">YOUR WORKSPACE</p>
+    <button class="button secondary" id="signOut">Sign out</button>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR SPACE. YOUR PACE.</p>
+        <h1>Welcome to your <span>focus zone.</span></h1>
+      </div>
+
+      <div class="profile">
+        <span class="avatar" id="profileAvatar">L</span>
+        <span>
+          <b id="profileName">Learner</b>
+          <small id="profileRole">Student</small>
+        </span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">MAKE ROOM FOR BIG IDEAS</p>
+      <h2>Your next great idea needs <em>a place.</em></h2>
+      <p>Choose a room, select your seat and book your study time.</p>
+      <a class="button primary" href="#booking">Reserve your spot ↗</a>
+    </section>
+
+    <section class="stats">
+      <article class="stat">
+        <small>AVAILABLE SEATS</small>
+        <strong id="availableCount">0</strong>
+      </article>
+
+      <article class="stat">
+        <small>YOUR ACTIVE BOOKINGS</small>
+        <strong id="activeCount">0</strong>
+      </article>
+
+      <article class="stat">
+        <small>STUDY ROOMS</small>
+        <strong id="roomCount">8</strong>
+      </article>
+    </section>
+
+    <section class="content-grid">
+
+      <article class="panel" id="booking">
+        <p class="eyebrow">CHOOSE YOUR LOCATION</p>
+        <h2>Seat reservation</h2>
+
+        <label for="roomSelect">Select a room</label>
+        <select id="roomSelect">
+          <option value="Quiet Zone">Quiet Zone</option>
+          <option value="Reading Hall">Reading Hall</option>
+          <option value="Window Bay">Window Bay</option>
+          <option value="Computer Lab">Computer Lab</option>
+          <option value="Discussion Room A">Discussion Room A</option>
+          <option value="Discussion Room B">Discussion Room B</option>
+          <option value="Group Study Room">Group Study Room</option>
+          <option value="Research Room">Research Room</option>
+        </select>
+
+        <div class="room-summary">
+          <span id="selectedRoomName">Quiet Zone</span>
+          <span id="seatCountLabel">12 seats</span>
+        </div>
+
+        <div class="legend">
+          <span><i class="dot available-dot"></i> Available</span>
+          <span><i class="dot selected-dot"></i> Selected</span>
+          <span><i class="dot unavailable-dot"></i> Booked</span>
+        </div>
+
+        <div class="seat-map" id="seatMap" aria-label="Library seat map"></div>
+
+        <p class="small-note" id="seatHint">
+          Select an available seat to continue.
+        </p>
+
+        <div class="form-grid">
+          <div>
+            <label for="bookingDate">Booking date</label>
+            <input type="date" id="bookingDate" required>
+          </div>
+
+          <div>
+            <label for="startHour">Start time</label>
+            <select id="startHour"></select>
+          </div>
+
+          <div>
+            <label for="duration">Duration</label>
+            <select id="duration">
+              <option value="1">1 hour</option>
+              <option value="2">2 hours</option>
+              <option value="3">3 hours</option>
+              <option value="4">4 hours</option>
+              <option value="5">5 hours</option>
+              <option value="6">6 hours</option>
+              <option value="7">7 hours</option>
+              <option value="8">8 hours</option>
+              <option value="9">9 hours</option>
+              <option value="10">10 hours</option>
+              <option value="11">11 hours</option>
+              <option value="12">12 hours</option>
+              <option value="13">13 hours</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="small-note">
+          Booking hours: 9 AM–10 PM. Select a future time.
+        </p>
+
+        <button class="button primary full" id="bookButton" type="button">
+          Confirm booking ↗
+        </button>
+
+        <div class="library-photo">
+          <img
+            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=85"
+            alt="Library interior with bookshelves"
+          >
+          <div class="photo-caption">
+            <p class="eyebrow">YOUR SPACE TO FOCUS</p>
+            <h3>Find your quiet. Discover your potential.</h3>
+          </div>
+        </div>
+      </article>
+
+      <div class="right-column">
+
+        <article class="panel" id="resources">
+          <p class="eyebrow">FIND YOUR SETUP</p>
+          <h2>Rooms &amp; resources</h2>
+          <p>Select a room to see its seat layout.</p>
+
+          <div class="resource-list">
+            <button class="resource-card" data-room="Quiet Zone">
+              <span>Quiet Zone</span><span>12 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Reading Hall">
+              <span>Reading Hall</span><span>16 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Window Bay">
+              <span>Window Bay</span><span>8 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Computer Lab">
+              <span>Computer Lab</span><span>12 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Discussion Room A">
+              <span>Discussion Room A</span><span>6 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Discussion Room B">
+              <span>Discussion Room B</span><span>6 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Group Study Room">
+              <span>Group Study Room</span><span>8 seats ↗</span>
+            </button>
+
+            <button class="resource-card" data-room="Research Room">
+              <span>Research Room</span><span>8 seats ↗</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="panel" id="history">
+          <h2>Booking history</h2>
+          <button class="text-button" id="clearHistory">
+            Clear cancelled bookings
+          </button>
+          <div id="bookingList"></div>
+        </article>
+
+        <article class="panel" id="notifications">
+          <h2>Notifications</h2>
+          <button class="text-button" id="clearNotifications">
+            Clear all
+          </button>
+          <div id="notificationList"></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="panel hidden" id="adminPanel">
+      <p class="eyebrow">ADMINISTRATOR VIEW</p>
+      <h2>Library overview</h2>
+
+      <section class="stats">
+        <article class="stat">
+          <small>TOTAL BOOKINGS</small>
+          <strong id="adminTotal">0</strong>
+        </article>
+
+        <article class="stat">
+          <small>ACTIVE BOOKINGS</small>
+          <strong id="adminActive">0</strong>
+        </article>
+
+        <article class="stat">
+          <small>CANCELLED / PAST</small>
+          <strong id="adminPast">0</strong>
+        </article>
+      </section>
+
+      <h3>All student bookings</h3>
+      <div id="adminBookingList"></div>
+
+      <p class="small-note">
+        Demo only. Administrator access is not securely authenticated.
+      </p>
+    </section>
+
+    <footer>© 2026 UNIVERSITY LIBRARY · BUILT FOR FOCUS</footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

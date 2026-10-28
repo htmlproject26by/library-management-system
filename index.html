@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Library | Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="login-page">
+
+  <main class="login-card">
+    <a class="brand" href="index.html">✦ UNIVERSITY / LIBRARY</a>
+
+    <p class="eyebrow">YOUR CAMPUS, REIMAGINED</p>
+    <h1>Make space for <span>greatness.</span></h1>
+    <p class="muted">Choose your access type to enter the library.</p>
+
+    <form id="loginForm">
+      <label for="personName">Your name</label>
+      <input
+        type="text"
+        id="personName"
+        placeholder="Enter your name"
+        maxlength="60"
+        required
+      >
+
+      <label>Choose access</label>
+
+      <div class="role-options">
+        <label class="role-option">
+          <input type="radio" name="role" value="Student" checked>
+          Student
+        </label>
+
+        <label class="role-option">
+          <input type="radio" name="role" value="Administrator">
+          Administrator
+        </label>
+      </div>
+
+      <button class="button primary full" type="submit">
+        Enter University Library ↗
+      </button>
+
+      <p class="small-note">
+        Library Management System· Data is stored in this browser
+      </p>
+    </form>
+  </main>
+
+</body>
+</html>
